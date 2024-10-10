@@ -1,0 +1,62 @@
+/* General body styling */
+body {
+    font-family: 'Courier', monospace;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: normal;
+    color: #222;
+}
+
+/* Main container styling */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Styling for the list of posts */
+.post-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-list li {
+    margin-bottom: 20px; /* Add space between each blog post */
+}
+
+.separator {
+    text-align: center; /* Center the separator text */
+    margin: 10px 0; /* Space around separators */
+}
+
+.post-title {
+    display: inline-block; /* Align title to the left */
+    font-size: 20px;
+}
+
+.post-list a {
+    text-decoration: none;
+    color: #222;
+}
+
+.post-date {
+    float: right; /* Align date to the right */
+    font-size: 16px;
+    color: #666;
+}
+
+/* Hover effect for the links */
+.post-list a:hover {
+    color: #000;
+}
