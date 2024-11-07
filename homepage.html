@@ -4,47 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepage.css">
-    <title>Homepage</title>
+    <title>Homepage with ASCII Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            padding: 40px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .tree {
+            text-align: left;
+            margin-left: 50px;
+            white-space: pre;
+            margin-bottom: 40px; /* Space between the tree and homepage */
+        }
+
+        /* Homepage-specific styles */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .post-list li {
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .post-title {
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .post-list a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .post-date {
+            float: right;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .post-list a:hover {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Home</h1>
-    </header>
+    <div class="container">
+        <div class="tree">
+            <pre>
+                                                         .
+                                              .         ;  
+                 .              .              ;%     ;;   
+                   ,           ,                :;%  %;   
+                    :         ;                   :;%;'     .,   
+           ,.        %;     %;            ;        %;'    ,;
+             ;       ;%;  %%;        ,     %;    ;%;    ,%'
+              %;       %;%;      ,  ;       %;  ;%;   ,%;' 
+               ;%;      %;        ;%;        % ;%;  ,%;'
+                `%;.     ;%;     %;'         `;%%;.%;'
+                 `:;%.    ;%%. %@;        %; ;@%;%'
+                    `:%;.  :;bd%;          %;@%;'
+                      `@%:.  :;%.         ;@@%;'   
+                        `@%.  `;@%.      ;@@%;         
+                          `@%%. `@%%    ;@@%;        
+                            ;@%. :@%%  %@@%;       
+                              %@bd%%%bd%%:;     
+                                #@%%%%%:;;
+                                %@@%%%::;
+                                %@@@%(o);  . '         
+                                %@@@o%;:(.,'         
+                            `.. %@@@o%::;         
+                               `)@@@o%::;         
+                                %@@(o)::;        
+                               .%@@@@%::;         
+                               ;%@@@@%::;.          
+                              ;%@@@@%%:;;;. 
+                          ...;%@@@@@%%:;;;;,..
+            </pre>
+        </div>
 
-    <main>
-        <ul class="post-list">
-            <li>
+        <!-- Homepage Content -->
+        <main>
+            <ul class="post-list">
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post1.html">Yoyos</a></span>
+                    <span class="post-date">2024 Jun 01</span>
+                </li>
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post2.html">🚀 TwoFold v0.6</a></span>
+                    <span class="post-date">2023 Jul 01</span>
+                </li>
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post3.html">Of butterflies, WASM and Zig</a></span>
+                    <span class="post-date">2023 May 11</span>
+                </li>
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post4.html">Foraging for mushrooms</a></span>
+                    <span class="post-date">2022 Nov 20</span>
+                </li>
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post5.html">Medicinal mushrooms course</a></span>
+                    <span class="post-date">2022 Oct 24</span>
+                </li>
+                <li>
+                    <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                    <span class="post-title"><a href="post6.html">My MEM pages are growing</a></span>
+                    <span class="post-date">2022 Aug 12</span>
+                </li>
                 <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post1.html">Yoyos</a></span>
-                <span class="post-date">2024 Jun 01</span>
-            </li>
-            <li>
-                <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post2.html">🚀 TwoFold v0.6</a></span>
-                <span class="post-date">2023 Jul 01</span>
-            </li>
-            <li>
-                <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post3.html">Of butterflies, WASM and Zig</a></span>
-                <span class="post-date">2023 May 11</span>
-            </li>
-            <li>
-                <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post4.html">Foraging for mushrooms</a></span>
-                <span class="post-date">2022 Nov 20</span>
-            </li>
-            <li>
-                <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post5.html">Medicinal mushrooms course</a></span>
-                <span class="post-date">2022 Oct 24</span>
-            </li>
-            <li>
-                <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-                <span class="post-title"><a href="post6.html">My MEM pages are growing</a></span>
-                <span class="post-date">2022 Aug 12</span>
-            </li>
-            <div class="separator">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
-        </ul>
-    </main>
+            </ul>
+        </main>
+    </div>
 </body>
 </html>

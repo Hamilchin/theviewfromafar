@@ -1,66 +1,111 @@
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
 
+/* General body styling */
 body {
     font-family: 'IBM Plex Mono', monospace;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
 }
 
-.container {
+/* Main container styling */
+.container, main {
     width: 80%;
     max-width: 800px;
-    padding: 40px;
-    margin: 0 auto; /* Center container horizontally */
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Header and Title Styling */
 h1 {
     font-size: 36px;
     font-weight: normal;
+    color: #222;
+    text-align: center;
     margin-bottom: 20px;
-    text-align: center; /* Center the title */
 }
 
+/* ASCII Tree specific styles */
+.tree {
+    text-align: left;
+    margin-left: 50px;
+    white-space: pre;
+    margin-bottom: 40px; /* Space between the tree and homepage */
+}
+
+/* Navigation Styling */
 nav {
+    text-align: center;
     margin-bottom: 40px;
-    text-align: center; /* Center the nav links */
 }
 
-a {
-    font-family: 'IBM Plex Mono', monospace;
+nav a {
     text-decoration: underline;
     color: black;
     margin: 0 10px;
 }
 
-span {
-    margin: 0 10px;
-}
-
-a:hover {
-    text-decoration: underline;
+nav a:hover {
     color: gray;
 }
 
+/* Blog Post List Styling */
+.post-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-list li {
+    margin-bottom: 20px;
+}
+
+.separator {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.post-title {
+    font-size: 20px;
+}
+
+.post-list a {
+    text-decoration: none;
+    color: #222;
+}
+
+.post-date {
+    float: right;
+    font-size: 16px;
+    color: #666;
+}
+
+.post-list a:hover {
+    color: #000;
+}
+
+/* Content Styling for Blog Post Pages */
 .content {
-    max-width: 800px;
-    margin: 0 auto; /* Center the content */
     text-align: justify;
 }
 
 p {
-    line-height: 1.6;
     margin-bottom: 20px;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 600px) {
     h1 {
         font-size: 28px;
     }
-    .container {
-        padding: 20px;
+    .container, main {
+        padding: 10px;
     }
 }
