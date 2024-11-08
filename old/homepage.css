@@ -12,68 +12,64 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
+
 /* Main container styling */
-.container, main {
-    width: 80%;
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header and Title Styling */
-h1 {
-    font-size: 36px;
-    font-weight: normal;
-    color: #222;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* ASCII Tree specific styles */
+/* ASCII Tree Styling */
 .tree {
+    line-height: 1.2;
     text-align: left;
-    margin-left: 50px;
-    white-space: pre;
-    margin-bottom: 40px; /* Space between the tree and homepage */
+    margin-left: 0px;
 }
 
-/* Navigation Styling */
-nav {
-    text-align: center;
-    margin-bottom: 40px;
+.tree a {
+    text-decoration: none;
+    color: #000000;
 }
 
-nav a {
+.tree a:hover {
+    color: #000000;
     text-decoration: underline;
-    color: black;
-    margin: 0 10px;
 }
 
-nav a:hover {
-    color: gray;
+
+
+/* Homepage Content Styling */
+main {
+    width: 100%;
 }
 
-/* Blog Post List Styling */
+/* Post List Styling */
 .post-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .post-list li {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .separator {
     text-align: center;
-    margin: 10px 0;
+    margin: 5px 0;
+    color: #999;
 }
 
 .post-title {
-    font-size: 20px;
+    font-size: 14pt;
+    padding-left: 1px;
 }
 
 .post-list a {
@@ -81,31 +77,23 @@ nav a:hover {
     color: #222;
 }
 
+.post-list a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
 .post-date {
     float: right;
     font-size: 16px;
     color: #666;
+    padding-right: 1px;
+    padding-top: 3px;
 }
 
-.post-list a:hover {
-    color: #000;
-}
-
-/* Content Styling for Blog Post Pages */
-.content {
-    text-align: justify;
-}
-
-p {
-    margin-bottom: 20px;
-}
 
 /* Responsive Adjustments */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-    .container, main {
+    .container {
         padding: 10px;
     }
 }
