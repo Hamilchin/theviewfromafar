@@ -28,6 +28,9 @@ body {
     line-height: 1.2;
     text-align: left;
     margin-left: 0px;
+    white-space: pre-wrap; /* Keeps ASCII formatting */
+    display: flex;
+    justify-content: center; /* Centers the entire tree as a block */
 }
 
 .tree a {
@@ -41,7 +44,7 @@ body {
 }
 
 .tree pre {
-    margin: 40px 0 0 0;
+    margin: 40px 0 0px 0;
 }
 
 /* Homepage Content Styling */
@@ -66,7 +69,7 @@ main {
 .separator {
     text-align: center;
     margin: 5px 0;
-    color: #454545;
+    color: #333;
 }
 
 .post-title {
