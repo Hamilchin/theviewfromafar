@@ -1,5 +1,9 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+@font-face {
+    font-family: 'SF Mono';
+    src: local('SF Mono'), url('https://path/to/sf-mono.woff2') format('woff2');
+  }
 
 /* General body styling */
 body {
@@ -32,7 +36,7 @@ h1 {
     margin-bottom: 0px;
 }
 
-h2 {
+.dates {
     font-size: 18px;
     font-family: monospace;
     font-weight: normal;
@@ -78,4 +82,13 @@ p {
     .container, main {
         padding: 10px;
     }
+}
+hr {
+
+    width: 70%;
+    border: 0;
+    height: 2px;
+    background: #999;
+    margin: 40px auto;
+
 }

@@ -1,34 +1,49 @@
-[
-  {
-    "title": "A Blog Post",
-    "slug": "Ablogpost",
-    "date": "2024-11-13",
-    "tags": [
-      "philosophy"
-    ]
-  },
-  {
-    "title": "a blog post",
-    "slug": "a blog post",
-    "date": "2024-11-13",
-    "tags": [
-      "philosophy"
-    ]
-  },
-  {
-    "title": "Post 1",
-    "slug": "post1",
-    "date": "2024-11-13",
-    "tags": [
-      "philosophy"
-    ]
-  },
-  {
-    "title": "My Blog Post",
-    "slug": "post2",
-    "date": "2024-11-13",
-    "tags": [
-      "philosophy"
-    ]
-  }
-]
+{
+  "philosophy": [
+    {
+      "title": "Post 1",
+      "slug": "Ablogpost",
+      "written": "2024-11-13",
+      "edited": "2024-11-16",
+      "tags": [
+        "philosophy"
+      ]
+    },
+    {
+      "title": "Post 1",
+      "slug": "a blog post",
+      "written": "2024-11-13",
+      "edited": "2024-11-14",
+      "tags": [
+        "philosophy"
+      ]
+    },
+    {
+      "title": "Post 1",
+      "slug": "post1",
+      "written": "2024-11-13",
+      "edited": "2024-11-17",
+      "tags": [
+        "philosophy"
+      ]
+    },
+    {
+      "title": "Post 1",
+      "slug": "post2",
+      "written": "2024-11-13",
+      "edited": "2024-11-19",
+      "tags": [
+        "philosophy"
+      ]
+    },
+    {
+      "title": "A model of consciousness",
+      "slug": "A model of consciousness",
+      "written": "2024-11-12",
+      "edited": "2024-11-17",
+      "tags": [
+        "philosophy"
+      ]
+    }
+  ]
+}

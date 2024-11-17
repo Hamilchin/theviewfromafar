@@ -6,7 +6,7 @@ class Tree extends Component {
       return (
         <div className="tree">
           <pre>
-            {`                                                        .
+            {`                                                           .
                                                 .         ;
                    .              .              ;%     ;;   
                      ,           ,                :;%  %;   
@@ -17,8 +17,8 @@ class Tree extends Component {
                ;       ;%;  %%;        ,     %;    ;%;    ,%'
                 %;       %;%;      ,  ;       %;  ;%;   ,%;' 
                  ;%;   [`}
-            <a href="#poetry" onClick={() => this.props.onSelectCategory('poetry')}>poetry</a>
-            {`]     ;%;        % ;%;  ,%;'
+            <a href="#poetry" onClick={() => this.props.onSelectCategory('writings')}>writings</a>
+            {`]   ;%;        % ;%;  ,%;'
                   \`%;.     ;%;     %;'         \`%;%;.%;'
                    \`:%;.    ;%%. %@;        %; ;@%;%'
                       \`:%;.  :;&#%;          %;@%;'
@@ -31,15 +31,13 @@ class Tree extends Component {
                                   %#@@%%::;
                                   %#@@o%:;;  . '         
                                   %#@@o%;:(.,'         
-                              \`.. %@@(o)::;         
+                              \`.. %@@(`}<a href="#about" onClick={() => this.props.onSelectCategory('about')}>o</a>{`)::;         
                                  \`)#@@o%::;         
                                   %#@@o%::;        
                                  .%#@@@%::;         
                                  ;%#@@@%::;.          
                                 ;%#@@@%%:;;;. 
-                            ...;%#@[`}
-            <a href="#about" onClick={() => this.props.onSelectCategory('about')}>about</a>
-            {`];;;...                            `}
+                            ...;%#@@@@%%:;;;;...                            `}
           </pre>
         </div>
       );

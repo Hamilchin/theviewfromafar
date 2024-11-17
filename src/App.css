@@ -1,5 +1,6 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap');
+
 /*@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap');*/
 
 /* General body styling */
@@ -25,6 +26,7 @@ body {
 
 /* ASCII Tree Styling */
 .tree {
+    color: #000000;
     line-height: 1.2;
     text-align: left;
     margin-left: 0px;
@@ -44,7 +46,7 @@ body {
 }
 
 .tree pre {
-    margin: 40px 0 0px 0;
+    margin: 40px 0 30px 0;
 }
 
 /* Homepage Content Styling */
@@ -69,7 +71,7 @@ main {
 .separator {
     text-align: center;
     margin: 5px 0;
-    color: #333;
+    color: #666;
 }
 
 .post-title {

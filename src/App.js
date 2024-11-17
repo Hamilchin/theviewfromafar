@@ -31,13 +31,16 @@ class App extends Component {
       this.setState({ selectedCategory: category });
     }
   };
+  
 
   render() {
     const { selectedCategory, posts } = this.state;
+    console.log(posts)
+    console.log(selectedCategory)
 
-    const filteredPosts = selectedCategory
-      ? posts.filter(post => post.tags.includes(selectedCategory))
-      : [];
+    const filteredPosts = selectedCategory && posts[selectedCategory]
+    ? posts[selectedCategory] // If category exists, get posts for that category
+    : [];
 
     return (
       <div className="container">
