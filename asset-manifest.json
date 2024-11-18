@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/theviewfromafar/static/css/main.65bde24f.css",
-    "main.js": "/theviewfromafar/static/js/main.3c41867c.js",
+    "main.js": "/theviewfromafar/static/js/main.558965b7.js",
     "index.html": "/theviewfromafar/index.html",
     "main.65bde24f.css.map": "/theviewfromafar/static/css/main.65bde24f.css.map",
-    "main.3c41867c.js.map": "/theviewfromafar/static/js/main.3c41867c.js.map"
+    "main.558965b7.js.map": "/theviewfromafar/static/js/main.558965b7.js.map"
   },
   "entrypoints": [
     "static/css/main.65bde24f.css",
-    "static/js/main.3c41867c.js"
+    "static/js/main.558965b7.js"
   ]
 }
