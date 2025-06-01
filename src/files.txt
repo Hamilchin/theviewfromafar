@@ -1,15 +1,15 @@
 poems:
-[2025-05, poem] | Collapse | water.md
-[2025-05, poem] | Terra Firma | terra firma.md
-[2025-02, poem] | Double Dactyl | double dactyls.md
-[2025-05, poem] | Untitled | test.md
+Collapse | [2025-05] Collapse | water.md
+Terra Firma | [2025-05] Terra Firma | terra firma.md
+Double Dactyl | [2025-02] Double Dactyl | double dactyls.md
+Untitled Sappy Poem | test link alsdflaksdf | test.md
 
 sketches:
-
+Occam, Solomonoff, and neural networks as induction machines | [2025-05] Occam, Solomonoff, and neural networks as induction machines | Occam, Solomonoff, and neural networks as induction machines.pdf
 
 idea-garden:
-
+Unsorted thoughts | [2025-05] UNSORTED THOUGHTS | unsorted thoughts.md
 
 misc:
-[2025-05] | About | test.md
-[2025-05] | Conlang Adventures | 2025-05-31.md
+Test Title | misc link 1 | test.md
+Conlang Adventures | misc link 2 | 2025-05-31.md
