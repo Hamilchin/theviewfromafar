@@ -121,7 +121,8 @@ def main():
             if filename in path_dict:
                 local_path= path_dict[filename]
                 posts[title]["local_path"] = local_path
-                md_content = open(local_path, "r").read()
+                with open(local_path, "r") as f:
+                    md_content = "\n".join(line for line in f if not line.strip().startswith("%%"))
                 posts[title]["raw_html"] = md.markdown(md_content, extensions=extensions)
                 page_path = os.path.join(category, title + ".html")
                 post_structure[category][title]["page_path"] = page_path
