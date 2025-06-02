@@ -21,6 +21,6 @@ Here's what's not in it:
 Here's the basic workflow:
 - Write something in Obsidian (or the .md editor of your choice)
 - Put the title, display-title (for links), and name of the markdown file (abs path not required) into files.txt.
-- Run deploy.sh to build and auto-commit to remote gh-pages.
+- Run src/deploy.sh from the project root to build and auto-commit to remote gh-pages. 
 
 Feel free to steal any of my code. No attribution needed. 
