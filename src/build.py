@@ -75,7 +75,7 @@ def make_html_links(posts): #posts being posts from post_structure
     return "".join([f'<a href="{posts[title]["page_path"]}">{posts[title]["display"]}</a> </br>' for title in posts])
 
 def make_html_feed(post_html):
-    return "\n <br> \n ".join(post_html)
+    return "\n <br> <hr> <br> \n ".join(post_html)
 
 
 def make_html_from_template(template_string, **kwargs):
@@ -154,7 +154,7 @@ def main():
                 post_structure[category][title]["page_path"] = os.path.join(category, filename)
 
 
-    template = open(os.path.join("src", "index_template_alt.html"), "r").read()
+    template = open(os.path.join("src", "index_template.html"), "r").read()
     index_html = make_html_from_template(template, 
                                         poem_links=make_html_links(post_structure["poems"]), 
                                         sketches_links=make_html_links(post_structure["sketches"]),
@@ -168,7 +168,7 @@ def main():
     template = open(os.path.join("src", "page_template.html"), "r").read()
     feed_html = make_html_from_template(template, 
                                         title="TEST FEED", 
-                                        content=make_html_feed(x["raw_html"] for x in post_structure["idea-garden"]))
+                                        content=make_html_feed(x["raw_html"] for x in post_structure["idea-garden"].values()))
 
     with open("feed.html", "w") as f:
                 f.write(feed_html)
