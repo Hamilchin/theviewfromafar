@@ -19,5 +19,5 @@ idea 3 | [2025-05] idea 3 | idea 3.md
 
 
 misc:
-Test Title | misc link 1 | test.md
+About | About | TVFA about.md 
 Conlang Adventures | misc link 2 | 2025-05-31.md
