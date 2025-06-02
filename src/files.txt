@@ -8,8 +8,8 @@ Double Dactyl | [2025-01] Double Dactyl | double dactyl.md
 
 sketches:
 Occam, Solomonoff, and neural networks as induction machines | [2025-04] Occam, Solomonoff, and neural networks as induction machines.pdf | Occam, Solomonoff, and neural networks as induction machines.pdf
-Knowledge as Information Compression, or Big Thing in the Chinese Room | [2025-03] Knowledge as Information Compression, or Big Thing in the Chinese Room.pdf | Knowledge as Information Compression, or Big Thing in the Chinese Room.pdf
-Evolution as Stochastic Gradient Descent | [2024-12] Evolution as Stochastic Gradient Descent | Evolution as Stochastic Gradient Descent.pdf
+Knowledge as Information Compression, or Big Thing in the Chinese Room | [2025-03] Knowledge as information compression, or Big Thing in the Chinese room.pdf | Knowledge as Information Compression, or Big Thing in the Chinese Room.pdf
+Evolution as Stochastic Gradient Descent | [2024-12] Evolution as Stochastic Gradient Descent | Evolution as stochastic gradient descent.pdf
 
 
 idea-garden:
