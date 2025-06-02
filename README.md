@@ -1,4 +1,4 @@
-This is a small repository for some of my writings. 
+This is a small repository for some of my writings. It is currently hosted at https://hamilchin.github.com/theviewfromafar. 
 
 Its heavily inspired by the blogging philosophy of a friend of mine, Brennan Colberg - you can see his thoughts on what he calls the Minimum Viable Blog [here](https://brennancolberg.com/writing/minimum-viable-blog). It's a great read. 
 
