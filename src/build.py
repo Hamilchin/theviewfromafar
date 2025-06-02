@@ -60,7 +60,7 @@ def find_paths_from_filenames(filenames, current_dir, path_dict):
                 path = os.path.join(current_dir, child)
 
                 if child.lower in path_dict:
-                    print(f"Error, duplicate for {child.lower}: {path_dict[child.lower]} replaced for {path}")
+                    print(f"Error, duplicate for {child.lower()}: {path_dict[child.lower()]} replaced for {path}")
 
                 path_dict[child.lower()] = path                    
 
@@ -101,7 +101,7 @@ def parse_file_structure(filename):
         else:
             post = {}
             data = [x.strip() for x in line.split("|")]
-            post["display"], post["file_name"] = data[1].lower(), data[2]
+            post["display"], post["file_name"] = data[1], data[2].lower()
             post["local_path"], post["page_path"], post["raw_html"]= None, None, None
             title = data[0]
             file_structure[current_category][title] = post
