@@ -8,9 +8,9 @@ This is the simplest possible blog I could dream of. It is a result of multiple 
 Here's what's in it: 
 
 - A file (files.txt) that contains a basic blog structure.
-- A python script that contains a few build functions that scrape markdown files from my local Obsidian directory and dump them into html files.
-- A few minimal "template" html files that define what posts will look like, and the homepage. 
-- Some PDF files to store multi-page posts. 
+- A few minimal "template" html files that define what the homepage and generic posts will look like.
+- A python script that contains a few build functions that scrape markdown from my local Obsidian directory and dump it into html files using the templates.
+- Some PDF files, manually exported and stored via Obsidian, to store multi-page posts. 
 
 Here's what's not in it: 
 
