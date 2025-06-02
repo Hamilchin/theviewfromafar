@@ -1,6 +1,6 @@
 This is a small repository for some of my writings. 
 
-Its heavily inspired by the blogging philosophy of a friend of mine, Brennan Colberg - you can see his thoughts on what he calls the Minimum Viable Blog (here)[https://brennancolberg.com/writing/minimum-viable-blog]. It's a great read. 
+Its heavily inspired by the blogging philosophy of a friend of mine, Brennan Colberg - you can see his thoughts on what he calls the Minimum Viable Blog [here](https://brennancolberg.com/writing/minimum-viable-blog). It's a great read. 
 
 This is the simplest possible blog I could dream of. It is a result of multiple failed attempts at making more complex, well styled sites that never seem to end up completed. 
 
