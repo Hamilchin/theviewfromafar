@@ -125,7 +125,7 @@ def main():
                     raw_text = f.read()
                     md_content = re.sub(r'%%.*?%%', '', raw_text, flags=re.DOTALL)
                 posts[title]["raw_html"] = md.markdown(md_content, extensions=extensions)
-                page_path = os.path.join(category, title + ".html").lower()
+                page_path = os.path.join(category, title + ".html")
                 post_structure[category][title]["page_path"] = page_path
 
             else:
