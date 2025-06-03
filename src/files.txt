@@ -13,7 +13,7 @@ Evolution as Stochastic Gradient Descent | [2024-12] Evolution as Stochastic Gra
 
 misc:
 Idea Garden | Idea Garden | Idea Garden.md
-Books | Books | Books.md
+Bookshelf | Bookshelf | Bookshelf.md
 
 site:
 About | About | TVFA about.md
