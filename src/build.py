@@ -100,7 +100,7 @@ def parse_file_structure(filename):
         else:
             post = {}
             data = [x.strip() for x in line.split("|")]
-            post["display"], post["file_name"] = data[1], data[2].lower()
+            post["display"], post["file_name"] = data[1], data[2]
             post["local_path"], post["page_path"], post["raw_html"]= None, None, None
             title = data[0]
             file_structure[current_category][title] = post
@@ -117,7 +117,7 @@ def main():
         filenames = [posts[title]["file_name"] for title in posts]
         path_dict = find_paths_from_filenames(filenames, vault_dir, {})
         for title in posts:
-            filename = posts[title]["file_name"]
+            filename = posts[title]["file_name"].lower()
             if filename in path_dict:
                 local_path= path_dict[filename]
                 posts[title]["local_path"] = local_path
@@ -157,6 +157,7 @@ def main():
 
 
     template = open(os.path.join("src", "index_template.html"), "r").read()
+    #print(post_structure["sketches"])
     index_html = make_html_from_template(template, 
                                         poem_links=make_html_links(post_structure["poems"]), 
                                         sketches_links=make_html_links(post_structure["sketches"]),
