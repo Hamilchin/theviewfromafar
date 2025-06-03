@@ -78,7 +78,6 @@ def make_html_links(posts): #posts being posts from post_structure
 def make_html_feed(post_html):
     return "\n <br> <hr> <br> \n ".join(post_html)
 
-
 def make_html_from_template(template_string, **kwargs):
     for key in kwargs:
         template_string = template_string.replace("{{" + key + "}}", kwargs[key])
@@ -130,7 +129,7 @@ def main():
                 post_structure[category][title]["page_path"] = page_path
 
             else:
-                print(f"{filename} not found in vault")
+                print(f"{filename} not found in vault") if not filename.endswith(".pdf") else None
 
     #at this point, post_structure should contain all post information
 
@@ -161,29 +160,34 @@ def main():
     index_html = make_html_from_template(template, 
                                         poem_links=make_html_links(post_structure["poems"]), 
                                         sketches_links=make_html_links(post_structure["sketches"]),
-                                        idea_garden_links=make_html_links(post_structure["idea-garden"]),
                                         misc_links=make_html_links(post_structure["misc"])
                                         )
     with open("index.html", "w") as f:
                 f.write(index_html)
     
 
-    template = open(os.path.join("src", "page_template.html"), "r").read()
-    feed_html = make_html_from_template(template, 
-                                        title="TEST FEED", 
-                                        content=make_html_feed(x["raw_html"] for x in post_structure["idea-garden"].values()))
+    # template = open(os.path.join("src", "page_template.html"), "r").read()
+    # feed_html = make_html_from_template(template, 
+    #                                     title="TEST FEED", 
+    #                                     content=make_html_feed(x["raw_html"] for x in post_structure["idea-garden"].values()))
 
-    with open("feed.html", "w") as f:
-                f.write(feed_html)
+    # with open("feed.html", "w") as f:
+    #             f.write(feed_html)
 
 
 def watch():
     secs = 0
     while True:
-        #print(f"rebuilt, active for {secs} secs")
-        main()
-        time.sleep(2)
-        secs += 2
+        try: 
+            print(f"rebuilt, active for {secs} secs")
+            clean()
+            main()
+            time.sleep(2)
+            secs += 2
+        except Exception as e:
+            with open("index.html", "w") as f:
+                f.write(str(e))
+            raise
 
 if __name__ == "__main__":
     fire.Fire(lambda command="build": {
