@@ -177,10 +177,10 @@ def main():
 
 def watch():
     secs = 0
+    clean()
     while True:
         try: 
             print(f"rebuilt, active for {secs} secs")
-            clean()
             main()
             time.sleep(2)
             secs += 2
