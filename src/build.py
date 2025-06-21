@@ -6,7 +6,7 @@ import fire
 import re
 
 
-extensions = ['nl2br']
+extensions = ['nl2br', 'tables', 'fenced_code']
 vault_dir = "/Users/alexanderchin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Home"
 
 def clean(root_dir="."): 
