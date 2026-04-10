@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script data-goatcounter="https://theviewfromafar.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+        <title>Model-based RL Project</title>
+    </head>
+    <body style="width: 600px; margin: 0 auto; text-align: left;">
+        <pre>
+        <h2>Model-based RL Project</h2></pre>
+        
+        <p><strong>Vague ideas/questions</strong></p>
+<ul>
+<li>
+<p>How can we create policies that are better at exploration and learning the dynamics of an environment? (things like learning from play, for example)</p>
+<ul>
+<li>A naive idea: train a policy to optimize for "amount of learning" of the world model - perhaps reward actions that lead to large changes in world model weights/high error? </li>
+</ul>
+</li>
+<li>
+<p>The advantage of learning a world models is that they can give you some generalization across goals. To perform a new goal you don't have to relearn your entire model, unlike model-free. </p>
+<ul>
+<li>Is there a way to get efficient generalization across policies using world models? The immediate thing I can think of is search over next states; no need to retrain a policy there.  </li>
+<li>Is there a way to exploit this advantage, and show that it is better? Current transformer world models like IRIS and TWISTER only show advantage on single atari games. </li>
+<li>Is transformer model-based stuff better for long horizon/long context tasks? </li>
+<li>What if we tried model-based RL for goal-conditioned tasks? </li>
+</ul>
+</li>
+<li>
+<p>Can we use world model latents to get better memory-conditioned imitation learning, like Abishek was talking about in class? (non markovian environments with latents, Pranav might be working on something similar)</p>
+</li>
+<li>
+<p>How can we ensure that the latent features learned by the world models are relevant to the task? How to mitigate JEPA collapse?</p>
+</li>
+<li>
+<p>How can we incorporate meta-learning / hierarchical learning / metaRL? Raj Rao side</p>
+<ul>
+<li>(perhaps for few-shot transfer across environments?)</li>
+</ul>
+</li>
+<li>
+<p>What advantage do models have over simply training PPO in simulation? Seems like an "extra step" to train PPO in imagination, like dreamer does. </p>
+<ul>
+<li>Being able to search is an advantage but is it better than simply training model-free? </li>
+</ul>
+</li>
+</ul>
+        
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        
+    </body>
+</html>

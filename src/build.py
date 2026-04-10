@@ -7,7 +7,7 @@ import re
 
 
 extensions = ['nl2br', 'tables', 'fenced_code']
-vault_dir = "/Users/alexanderchin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Home"
+vault_dir = "/Users/alexanderchin/non-icloud/obsidian-vaults/Home"
 
 def clean(root_dir="."): 
     
@@ -51,25 +51,63 @@ def clean(root_dir="."):
             os.remove(f)
 
 #do DFS. takes in filenames, finds their paths, returns map file_name -> abs_path
-def find_paths_from_filenames(filenames, current_dir, path_dict):
+def find_path_from_filename(filename, current_dir):
 
     for child in os.listdir(current_dir): 
-         if os.path.isfile(os.path.join(current_dir, child)):
-            if child.lower() in [name.lower() for name in filenames]:
+        if os.path.isfile(os.path.join(current_dir, child)):
+            if child.lower() == filename.lower():
+                return os.path.join(current_dir, child)
+        elif os.path.isdir(os.path.join(current_dir, child)):
+            result = find_path_from_filename(filename, os.path.join(current_dir, child))
+            if result is not None:
+                return result
+    return None
 
-                path = os.path.join(current_dir, child)
 
-                if child.lower in path_dict:
-                    print(f"Error, duplicate for {child.lower()}: {path_dict[child.lower()]} replaced for {path}")
+def build_linked_page(md_filename, title, processed_files):
+    local_path = find_path_from_filename(md_filename, vault_dir)
+    if local_path is None:
+        print(f"Linked file {md_filename} not found in vault")
+        return
 
-                path_dict[child.lower()] = path                    
+    with open(local_path, "r") as f:
+        raw_text = f.read()
+    md_content = re.sub(r'%%.*?%%', '', raw_text, flags=re.DOTALL)
+    raw_html = md.markdown(md_content, extensions=extensions)
+    raw_html = process_wiki_links(raw_html, "links", processed_files)
 
-    dir_paths = [os.path.join(current_dir, child) for child in os.listdir(current_dir) if not os.path.isfile(os.path.join(current_dir, child))]
+    os.makedirs("links", exist_ok=True)
+    page_template = open(os.path.join("src", "page_template.html"), "r").read()
+    html = make_html_from_template(page_template, title=title, content=raw_html)
 
-    for path in dir_paths:
-        find_paths_from_filenames(filenames, path, path_dict)
-    
-    return path_dict
+    with open(os.path.join("links", title + ".html"), "w") as f:
+        f.write(html)
+
+
+def process_wiki_links(raw_html, page_dir, processed_files=None):
+    if processed_files is None:
+        processed_files = set()
+
+    pattern = r'\[\[([^|\]]+)\|([^\]]+)\]\]'
+
+    def replace_link(match):
+        filename = match.group(1)
+        display_name = match.group(2)
+
+        link_page_path = os.path.join("links", filename + ".html")
+
+        if page_dir == "links":
+            rel_path = filename + ".html"
+        else:
+            rel_path = os.path.relpath(link_page_path, page_dir)
+
+        if filename not in processed_files:
+            processed_files.add(filename)
+            build_linked_page(filename + ".md", filename, processed_files)
+
+        return f'<a href="{rel_path}">{display_name}</a>'
+
+    return re.sub(pattern, replace_link, raw_html)
 
 
 def make_html_links(posts): #posts being posts from post_structure
@@ -107,29 +145,29 @@ def parse_file_structure(filename):
     return file_structure
 
 
-
 def main():
     post_structure = parse_file_structure("files.txt")
 
     #data population
     for category in post_structure:
         posts = post_structure[category]
-        filenames = [posts[title]["file_name"] for title in posts]
-        path_dict = find_paths_from_filenames(filenames, vault_dir, {})
+
         for title in posts:
             filename = posts[title]["file_name"].lower()
-            if filename in path_dict:
-                local_path= path_dict[filename]
-                posts[title]["local_path"] = local_path
-                with open(local_path, "r") as f:
-                    raw_text = f.read()
-                    md_content = re.sub(r'%%.*?%%', '', raw_text, flags=re.DOTALL)
-                posts[title]["raw_html"] = md.markdown(md_content, extensions=extensions)
-                page_path = os.path.join(category, title + ".html")
-                post_structure[category][title]["page_path"] = page_path
+            local_path = find_path_from_filename(filename, vault_dir)
 
-            else:
+            if local_path is None:
                 print(f"{filename} not found in vault") if not filename.endswith(".pdf") else None
+                continue
+
+            posts[title]["local_path"] = local_path
+            with open(local_path, "r") as f:
+                raw_text = f.read()
+                md_content = re.sub(r'%%.*?%%', '', raw_text, flags=re.DOTALL)
+            posts[title]["raw_html"] = md.markdown(md_content, extensions=extensions)
+            page_path = os.path.join(category, title + ".html")
+            post_structure[category][title]["page_path"] = page_path
+
 
     #at this point, post_structure should contain all post information
 
@@ -143,6 +181,7 @@ def main():
 
                 raw_html = post_structure[category][title]["raw_html"]
                 page_path = post_structure[category][title]["page_path"]
+                raw_html = process_wiki_links(raw_html, category)
                 page_template = open(os.path.join("src","page_template.html"), "r").read()
 
                 html = make_html_from_template(page_template, title=title, content=raw_html)
