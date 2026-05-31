@@ -4,6 +4,20 @@
         <title>The view from afar</title>
         <script data-goatcounter="https://theviewfromafar.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+        <script>
+        MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }
+        };
+        </script>
+        <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <style>
+        /* keep footnote superscripts from inflating line spacing */
+        sup, sub { position: relative; vertical-align: baseline; line-height: 0; font-size: 0.75em; }
+        sup { top: -0.5em; }
+        sub { bottom: -0.25em; }
+        </style>
     </head>
 
     <body style="width: 600px; margin: 0 auto; text-align: left;">
@@ -29,18 +43,11 @@ _.'^"`===-'-----'"-._
                     </pre>
 
         Welcome! The View from Afar is a minimal repository of assorted writing.
-        You can read more about the blog <a href="site/About.html">here</a>, or sign up for the mailing list <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6QNCPNiTR-cs8fej-B9AamsPl7CjxUZww9-7hBUfM__G9CQ/viewform?usp=sharing&ouid=109574609719519675919">here</a>. 
+        You can read more about the blog [[TVFA about|here]], or sign up for the mailing list <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6QNCPNiTR-cs8fej-B9AamsPl7CjxUZww9-7hBUfM__G9CQ/viewform?usp=sharing&ouid=109574609719519675919">here</a>.
 
         <br><br>
 
-        <pre><strong>Sketches:</strong></pre>
-        {{sketches_links}} <br>
+        {{TVFA Home}}
 
-        <pre><strong>Poems:</strong></pre>
-        {{poem_links}} <br> 
-        
-        <pre><strong>Other:</strong></pre>
-        {{misc_links}}
-        
     </body>
 </html>
